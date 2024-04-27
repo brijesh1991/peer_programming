@@ -1,0 +1,11 @@
+CFLAGS :=-g 
+CC :=gcc
+
+SRCS=$(wildcard *.c)
+OBJS=$(SRCS:.c=.o)
+
+$(OBJS):$(SRCS)
+	$(CC) $(CFLAGS) $(SRCS) -o $@
+
+clean:
+	rm -rf $(OBJS)
